@@ -3,7 +3,7 @@ import React from 'react';
 class PhotoGrid extends React.Component {
   render() {
     return (
-      <div clasName = "photo-grid">
+      <div className = "photo-grid">
         <p> photo grid! </p>
       </div>
     )
