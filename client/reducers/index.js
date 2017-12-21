@@ -5,4 +5,6 @@ import posts from './posts.reducer';
 import comments from './comments.reducer';
 
 // also need to passs in teh changes
-export default rootReducer = combineReducers({posts, comments, router: routerReducer })
+const rootReducer = combineReducers({ posts, comments, routing: routerReducer });
+
+export default rootReducer; 
