@@ -11,6 +11,7 @@
 
 // give it [] because state is not going to equal anything yet
 export default function posts (state = [], action) {
+  console.log('post will change');
   console.log(state, action);
   return state; 
 }
