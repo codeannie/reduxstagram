@@ -1,6 +1,6 @@
 import React from 'react';
 import Photo from './Photo';
-//import comments
+import Comments from './Comments';
 
 export default class Single extends React.Component {
   render() {
@@ -13,6 +13,7 @@ export default class Single extends React.Component {
     return (
       <div className = "single-photo">
         <Photo index={index} post={post} {...this.props} />
+        <Comments />
       </div>
     )
   }
