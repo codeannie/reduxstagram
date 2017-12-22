@@ -3,7 +3,7 @@ import React from 'react';
 class Single extends React.Component {
   render() {
     return (
-      <div clasName = "single-photo">
+      <div className = "single-photo">
         <p> Single photo! </p>
       </div>
     )
