@@ -11,7 +11,17 @@
 
 // give it [] because state is not going to equal anything yet
 export default function posts (state = [], action) {
-  console.log('post will change');
-  console.log(state, action);
-  return state; 
+  switch(action.type) {
+    case 'INCREMENT_LIKES' :
+    console.log('incrementing likes"')
+    const index = action.payload.index;
+    // return updated state with +1 like on specific photo
+    return [
+      ...state.slice(0, index), // before the one we are updating
+      {...state[index], likes: state[index].likes + 1}, // update the actual post we want to update
+      ...state.slice(index + 1), // everything after the one we are updating
+    ]
+    default:
+      return state;
+  }
 }
