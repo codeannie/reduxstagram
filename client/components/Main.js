@@ -15,15 +15,3 @@ class Main extends React.Component {
 }
 
 export default Main; 
-
-// const Main = React.createClass({
-//   render() {
-//     return (
-//       <div>
-//         <h1> 
-//           <Link to="/">Redux Instagram</Link>
-//         </h1>
-//       </div>
-//     )
-//   }
-// });
