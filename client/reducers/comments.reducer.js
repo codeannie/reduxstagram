@@ -2,10 +2,11 @@
 export function postComments(state = [], action) {
   switch(action.type) {
     case 'ADD_COMMENT':
+    console.log('adding comment');
     // return new state with new content
       return [...state, {
-        user: action.author,
-        text: action.comment
+        user: action.payload.author,
+        text: action.payload.comment
       }];
 
     case 'REMOVE_COMMENT':
@@ -17,21 +18,21 @@ export function postComments(state = [], action) {
         // after the deleted one to the end
         ...state.slice(action.index + 1)
       ]
-      return state;
+
     default: 
       return state;
   }
-  return state;
+  return state; // is this needed? 
 }
 
 function comments (state = [], action) {
   // check if post is there
-  if (typeof action.postId !== 'undefined') {
+  if ( action.payload && typeof action.payload.postId !== 'undefined') {
     return {
       // take current state
       ...state,
       // overwrite the post with a new one 
-      [action.postId] : postComments(state[action.postId], action)
+      [action.payload.postId] : postComments(state[action.payload.postId], action)
     }
   }
   return state; 
