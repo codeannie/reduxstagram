@@ -14,7 +14,7 @@ export default class Single extends React.Component {
     return (
       <div className = "single-photo">
         <Photo index={index} post={post} {...this.props} />
-        <Comments postComments={postComments} {...this.props} />
+        <Comments postComments={postComments} {...this.props} />  
       </div>
     )
   }
