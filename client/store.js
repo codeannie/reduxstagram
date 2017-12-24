@@ -16,7 +16,9 @@ const defaultState = {
 }
 
 // create the store - takes reducer & state
-const store = createStore(rootReducer, defaultState);
+const store = createStore(rootReducer, defaultState,
+window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 // want to remember browser history 
 export const history = syncHistoryWithStore(browserHistory, store);
