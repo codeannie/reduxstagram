@@ -1,6 +1,12 @@
 import React from 'react';
 
 export default class Comments extends React.Component {
+  constructor (props) {
+    super(props);
+    // creates a new instance of this function 
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
   renderComment(comment, index) {
     return (
       <div className="comment" key={index}>
@@ -34,7 +40,7 @@ export default class Comments extends React.Component {
       <div className = "comments">
         {this.props.postComments.map(this.renderComment)}
 
-        <form ref="commentForm" className="comment-form" onSubmit={(e) => this.handleSubmit(e)}>
+        <form ref="commentForm" className="comment-form" onSubmit={this.handleSubmit}>
           <input type="text" ref="author" placeholder="author" />
           <input type="text" ref="comment" placeholder="comment" />
           <input type="submit" hidden />
